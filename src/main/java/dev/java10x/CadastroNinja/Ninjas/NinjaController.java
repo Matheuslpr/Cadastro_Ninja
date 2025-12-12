@@ -23,12 +23,12 @@ public class NinjaController {
     public String criarNinja(){
         return "Ninja criado com sucesso";
     }
-    //mostrar todos os ninjas
-    @GetMapping("/listarID")
-    public String listarNinjaId(){
-        return "NinjaS listados com sucesso";
+    //mostrar por id
+    @GetMapping("/listar/{id}")
+    public NinjaModel listarNinjasId(@PathVariable Long id){
+        return ninjaService.listarNinjasId(id);
     }
-    //mostar ninjas por id (read)
+    //mostar ninjas  (read)
     @GetMapping("/listar")
     public List<NinjaModel> listarNinjas(){
         return ninjaService.listarNinjas();
