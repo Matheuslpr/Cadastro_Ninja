@@ -14,7 +14,7 @@ public class MissoesController {
     @PostMapping("/criar")
         public String criarMissao(){
         return "Missao Criada";
-    }
+}
 
     @PutMapping("/alterar")
     public String alterarMissao(){
