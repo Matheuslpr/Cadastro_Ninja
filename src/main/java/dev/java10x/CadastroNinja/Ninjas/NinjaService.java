@@ -14,6 +14,7 @@ public class NinjaService {
         this.ninjaRepository = ninjaRepository;
     }
 
+
     public List<NinjaModel> listarNinjas(){
         return ninjaRepository.findAll();
     }
@@ -29,6 +30,13 @@ public class NinjaService {
 
     public void deletarNinja(Long id){
         ninjaRepository.deleteById(id);
+    }
+    public NinjaModel atualizarNinja(Long id, NinjaModel ninjaAtualizado){
+        if(ninjaRepository.existsById(id)){
+            ninjaAtualizado.setId(id);
+            return ninjaRepository.save(ninjaAtualizado);
+        }
+        return null;
     }
 
 }

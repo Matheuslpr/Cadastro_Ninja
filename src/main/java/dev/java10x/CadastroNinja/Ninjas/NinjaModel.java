@@ -17,6 +17,7 @@ import lombok.NoArgsConstructor;
 //GETTERS E SETTERS
 @Data
 
+
 public class NinjaModel {
 
     @Id
@@ -42,4 +43,5 @@ public class NinjaModel {
     @ManyToOne
     @JoinColumn(name = "missoes_id")
     private MissoesModel missoes;
+
 }
