@@ -1,8 +1,7 @@
 package dev.java10x.CadastroNinja.Missoes;
 
-import dev.java10x.CadastroNinja.Ninjas.NinjaModel;
-import org.springframework.web.bind.annotation.*;
 
+import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
@@ -26,9 +25,10 @@ public class MissoesController {
     }
 
     @PostMapping("/criar")
-        public String criarMissao(){
-        return "Missao Criada";
-}
+    public MissoesModel criarMissao(@RequestBody MissoesModel missao){
+        return missoesService.criarMissao(missao);
+    }
+
 
     @PutMapping("/alterar")
     public String alterarMissao(){

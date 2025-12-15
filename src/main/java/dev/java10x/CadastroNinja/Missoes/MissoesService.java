@@ -17,7 +17,9 @@ public class MissoesService{
     public List<MissoesModel> listarMissoes(){
         return missoesRepository.findAll();
     }
-
+    public MissoesModel criarMissao(MissoesModel missao){
+        return missoesRepository.save(missao);
+    }
 
     public MissoesModel ListarMissoesId(Long id){
         Optional<MissoesModel> missoesPorId= missoesRepository.findById(id);
