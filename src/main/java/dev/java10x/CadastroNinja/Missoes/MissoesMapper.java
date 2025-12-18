@@ -15,6 +15,7 @@ public class MissoesMapper {
         missoesModel.setNinjas(missoesDTO.getNinjas());
 
         return missoesModel;
+
     }
     public MissoesDTO map(MissoesModel missoesModel){
         MissoesDTO missoesDTO = new MissoesDTO();
