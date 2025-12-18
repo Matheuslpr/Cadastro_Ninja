@@ -19,8 +19,8 @@ public class NinjaController {
     }
     //Adicionar (create)
     @PostMapping("/criar")
-    public NinjaModel criarNinja(@RequestBody NinjaModel ninja){
-        return ninjaService.criarNinja(ninja);
+    public NinjaDTO criarNinja(@RequestBody NinjaDTO ninjaDTO){
+        return ninjaService.criarNinja(ninjaDTO);
     }
     //Mostrar por id
     @GetMapping("/listar/{id}")
