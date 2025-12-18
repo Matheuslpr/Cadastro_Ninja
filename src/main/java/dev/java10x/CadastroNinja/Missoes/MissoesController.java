@@ -25,8 +25,8 @@ public class MissoesController {
     }
 
     @PostMapping("/criar")
-    public MissoesModel criarMissao(@RequestBody MissoesModel missao){
-        return missoesService.criarMissao(missao);
+    public MissoesDTO criarMissao(@RequestBody MissoesDTO missaoDTO){
+        return missoesService.criarMissao(missaoDTO);
     }
 
     @PutMapping("/alterar{id}")

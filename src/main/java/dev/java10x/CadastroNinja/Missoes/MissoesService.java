@@ -1,7 +1,6 @@
 package dev.java10x.CadastroNinja.Missoes;
 
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 import java.util.Optional;
 
@@ -9,15 +8,25 @@ import java.util.Optional;
 public class MissoesService{
 
     private MissoesRepository missoesRepository;
+    private MissoesMapper missoesMapper;
 
     public MissoesService(MissoesRepository missoesRepository) {
         this.missoesRepository = missoesRepository;
     }
+
+    public MissoesService(MissoesRepository missoesRepository, MissoesMapper missoesMapper) {
+        this.missoesRepository = missoesRepository;
+        this.missoesMapper = missoesMapper;
+    }
+
     public List<MissoesModel> listarMissoes(){
         return missoesRepository.findAll();
     }
-    public MissoesModel criarMissao(MissoesModel missao){
-        return missoesRepository.save(missao);
+
+    public MissoesDTO criarMissao(MissoesDTO missaoDTO){
+        MissoesModel missao = missoesMapper.map(missaoDTO);
+        missao = missoesRepository.save(missao);
+        return missoesMapper.map(missao);
     }
 
     public MissoesModel ListarMissoesId(Long id){
