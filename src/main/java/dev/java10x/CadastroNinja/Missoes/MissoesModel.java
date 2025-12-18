@@ -33,6 +33,9 @@ public class MissoesModel {
     @Column(name = "descricao")
     private String descricao;
 
+    @Column(name = "dificuldade")
+    private String dificuldade;
+
     @OneToMany(mappedBy = "missoes")
     @JsonIgnore
     private List<NinjaModel> ninjas;
