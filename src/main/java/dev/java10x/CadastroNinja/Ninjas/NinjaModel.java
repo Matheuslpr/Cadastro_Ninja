@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 //TABELA
 @Entity
@@ -17,6 +18,8 @@ import lombok.NoArgsConstructor;
 //GETTERS E SETTERS
 @Data
 
+//ToString
+@ToString(exclude = "missoes")
 
 public class NinjaModel {
 
